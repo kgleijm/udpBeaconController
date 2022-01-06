@@ -23,7 +23,7 @@ class MessageReceiver(Thread):
         print("MessageReceiver running")
 
 
-currentMessageFrequency = 1
+currentMessageFrequency = 10
 
 
 
@@ -41,7 +41,7 @@ def requestFunc():
                 break
             else:
                 print(content)
-                client.send("20".encode("utf-8"))
+                client.send(f"{currentMessageFrequency}".encode("utf-8"))
         print("Closing connection")
         client.close()
 
